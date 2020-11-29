@@ -1,1 +1,1 @@
-# pushkin
+# pushkin a.s.
