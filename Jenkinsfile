@@ -18,4 +18,8 @@ pipeline {
             }
         }
     }
+    post {
+        success {
+            githubNotify description: 'This is a shorted example',  status: 'SUCCESS'
+        }
 }
