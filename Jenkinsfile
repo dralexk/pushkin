@@ -24,7 +24,8 @@ pipeline {
                 status: 'SUCCESS',  
                 repo: "pushkin", 
                 account: "dralexk",
-                credentialsId: "GitHub-Creds"
+                credentialsId: "GitHub-Creds",
+                sha: GIT_COMMIT
         }
     }
 }
