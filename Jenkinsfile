@@ -20,7 +20,7 @@ pipeline {
     }
     post {
         success {
-            githubNotify description: 'This is a shorted example',  
+            githubNotify description: 'This is a Jenkins notification',  
                 status: 'SUCCESS',  
                 repo: "pushkin", 
                 account: "dralexk",
