@@ -1,1 +1,1 @@
-# pushkin, alexander sergeevich.
+# pushkin, alexander sergeevich..
