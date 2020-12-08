@@ -23,7 +23,8 @@ pipeline {
             githubNotify description: 'This is a shorted example',  
                 status: 'SUCCESS',  
                 repo: "pushkin", 
-                account: "dralexk"
+                account: "dralexk",
+                credentialsId: "GitHub-Creds"
         }
     }
 }
