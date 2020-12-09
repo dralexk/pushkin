@@ -5,7 +5,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    def fileContents = new File('feeling.txt').text
+                    def fileContents = readFile "feeling.txt"
                     echo fileContents
                 }
             }
