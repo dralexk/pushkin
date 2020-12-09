@@ -14,12 +14,21 @@ pipeline {
     }
     post {
         success {
-            githubNotify description: 'This is a Jenkins notification',  
+            githubNotify description: 'Jenkins reports success!',  
                 status: 'SUCCESS',  
                 repo: "pushkin", 
                 account: "dralexk",
                 credentialsId: "GitHub-Creds",
                 sha: GIT_COMMIT
         }
+        failure {
+            githubNotify description: 'Jenkins reports failure!',  
+                status: 'FAILURE',  
+                repo: "pushkin", 
+                account: "dralexk",
+                credentialsId: "GitHub-Creds",
+                sha: GIT_COMMIT
+        }
+            
     }
 }
