@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                cat feeling.txt
+                sh 'cat feeling.txt'
             }
         }
     }
