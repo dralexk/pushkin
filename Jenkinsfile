@@ -21,7 +21,7 @@ pipeline {
     post {
         success {
             githubNotify description: 'This is a Jenkins notification',  
-                status: 'FAILURE',  
+                status: 'SUCCESS',  
                 repo: "pushkin", 
                 account: "dralexk",
                 credentialsId: "GitHub-Creds",
