@@ -5,7 +5,8 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    ls -l
+                    String fileContents = new File('feeling.txt').text
+                    echo fileContents
                 }
             }
         }
