@@ -7,7 +7,7 @@ pipeline {
                 script {
                     def fileContents = readFile "feeling.txt"
                     echo fileContents
-                    assert fileContents.contains("better")
+                    assert fileContents.contains("happy")
                 }
             }
         }
