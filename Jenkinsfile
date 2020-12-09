@@ -4,7 +4,9 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'ls -l'
+                script {
+                    ls -l
+                }
             }
         }
     }
