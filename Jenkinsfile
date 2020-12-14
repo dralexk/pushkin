@@ -7,7 +7,8 @@ pipeline {
                 script {
                     def fileContents = readFile "feeling.txt"
                     echo fileContents
-                    echo GIT_COMMIT
+                    echo "GIT_COMMIT: ${GIT_COMMIT}"
+                    echo "GIT_BRANCH: ${Git_BRANCH}"
                     assert fileContents.contains("happy")
                 }
             }
