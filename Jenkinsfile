@@ -2,30 +2,33 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
-        }
         stage('Test') {
             steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                script {
+                    def fileContents = readFile "feeling.txt"
+                    echo fileContents
+                    assert fileContents.contains("happy")
+                }
             }
         }
     }
     post {
         success {
-            githubNotify description: 'This is a Jenkins notification',  
+            githubNotify description: 'Jenkins reports success!',  
                 status: 'SUCCESS',  
                 repo: "pushkin", 
                 account: "dralexk",
                 credentialsId: "GitHub-Creds",
                 sha: GIT_COMMIT
         }
+        failure {
+            githubNotify description: 'Jenkins reports failure!',  
+                status: 'FAILURE',  
+                repo: "pushkin", 
+                account: "dralexk",
+                credentialsId: "GitHub-Creds",
+                sha: GIT_COMMIT
+        }
+            
     }
 }
